@@ -4,7 +4,10 @@
     width: calc(45% - 10px);
     background-color: white;
     margin: 10px;
-    position: ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .Product img{
@@ -14,10 +17,28 @@
 
 .Name{
     color: #36a8dd;
+    width: 100%;
+}
+.Product h4{
+    width: 100%;
 }
 
 .ButtonItem{
-    position: ;
-    bottom: 10px;
-    left:10px;
+    background: transparent;
+    color: #36a8dd;
+    padding: 5px;
+    border: 2px solid #36a8dd;
+    align-self: flex-end;
+}
+
+.ButtonItem:hover{
+    cursor: pointer;
+    color:white;
+    background: #36a8dd;
+}
+
+@media (min-width: 600px){
+    .Product{
+        width: 30%;
+    }
 }
