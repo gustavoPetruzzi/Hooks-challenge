@@ -1,0 +1,36 @@
+.Header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    
+}
+
+.Header div{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.Navigation{
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+    width: 80%;
+}
+
+.Items{
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+
+.Items li{
+    display: inline-block;
+    margin: 0 16px;  
+}
+
+.Item {
+    color: blue;
+    font-weight: bold;    
+}

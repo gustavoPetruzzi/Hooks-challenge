@@ -1,0 +1,23 @@
+.Product{
+    text-align: center;
+    display: inline-block;
+    width: calc(45% - 10px);
+    background-color: white;
+    margin: 10px;
+    position: ;
+}
+
+.Product img{
+    width: 90%;
+    
+}
+
+.Name{
+    color: #36a8dd;
+}
+
+.ButtonItem{
+    position: ;
+    bottom: 10px;
+    left:10px;
+}
