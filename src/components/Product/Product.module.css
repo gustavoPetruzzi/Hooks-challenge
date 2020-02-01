@@ -28,7 +28,6 @@
     color: #36a8dd;
     padding: 5px;
     border: 2px solid #36a8dd;
-    align-self: flex-end;
 }
 
 .ButtonItem:hover{
@@ -42,3 +41,5 @@
         width: 30%;
     }
 }
+
+/* align-self: flex-end */

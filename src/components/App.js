@@ -3,7 +3,11 @@ import Product from './Product/Product';
 import classes from './App.module.css';
 import useProducts from './useProducts';
 import Navigation from '../components/Navigation/Navigation';
+import Button from './Button/Button';
 
+const addMoreProducts = () =>{
+    return 1;
+}
 
 const App = () =>{
 
@@ -11,12 +15,19 @@ const App = () =>{
     const [cart, setCart] = useState([]);
     
     let content;
-    const addProduct = (id) =>{
+    const addProduct = (id, amount) =>{
         let newCart = [...cart];
-       
+        console.log(amount);
+        console.log(id);
+        /*
         newCart.push(products.filter(product => product.id === id)[0]);
         setCart(newCart);
+        */
         
+    }
+
+    const removeProduct = (id) =>{
+        return 1;
     }
 
     
@@ -28,8 +39,9 @@ const App = () =>{
                     name={product.name}
                     price={product.price}
                     image={product.photo}
-                    
-                    clicked={() => addProduct(product.id) }
+                    //clicked={() =>addProduct(product.id)}
+                    remove={() => removeProduct(product.id)}
+                    add={(amount) =>addProduct(product.id, amount)}
                 />
             )
         })  
@@ -41,6 +53,7 @@ const App = () =>{
         <div className={classes.App}>
             <Navigation cart={cart} />
             {content}
+            <Button style={{ width: '70%'}} clicked={addMoreProducts} > Mas productos</Button>
         </div>
     )
 }
