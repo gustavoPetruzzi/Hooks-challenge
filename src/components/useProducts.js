@@ -1,15 +1,19 @@
 import  {useState, useEffect} from 'react';
-import axios from 'axios';
+import api from '../api';
 
 const useProducts = () =>{
     const [products, setProducts] = useState([]);
-    const getProducts = async () =>{
-        const response = await axios.get('https://challenge-api.aerolab.co/products');
+    const [page, setPage] = useState(1);
+    const getProducts = async (page) =>{
+        console.log(page);
+        let response;
+        response = await api.get('/products');
         setProducts(response.data.products);
+        
     }
 
     useEffect(() =>{
-        getProducts();
+        getProducts(page);
     },[])
 
     return products;
