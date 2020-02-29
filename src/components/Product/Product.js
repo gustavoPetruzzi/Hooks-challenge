@@ -21,15 +21,15 @@ const Product = (props) =>{
         button = <Button style={{alignSelf: 'flex-end'}} clicked={() =>add(props,1)}>Agregar Producto</Button>
     }
     return(
-        <div className={classes.Product}>
-            <img alt={props.name} src={props.image} />
-            <h3  className={classes.Name} >{props.name}</h3>
-            <h4> $ {props.price.toFixed(2)}</h4>
+            <div className={classes.Product}>
+                <img alt={props.name} src={props.image} />
+                <h3  className={classes.Name} >{props.name}</h3>
+                <h4> $ {props.price.toFixed(2)}</h4>
 
-            {button}             
+                {button}             
 
 
-        </div>
+            </div>
     )
 }
 
