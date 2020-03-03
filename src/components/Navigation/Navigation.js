@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Navigation.module.css';
 import logo from '../../assets/logo.png';
 import cart from '../../assets/shopping-cart.png';
+
 const Navigation = (props) =>{    
     return(
         <header className={classes.Header}>

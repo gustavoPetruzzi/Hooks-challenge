@@ -1,20 +1,30 @@
-import  {useState, useEffect} from 'react';
+import  {useState, useEffect, useCallback} from 'react';
 import api from '../api';
 
-const useProducts = () =>{
+const useProducts = (page) =>{
+
     const [products, setProducts] = useState([]);
-    const [page, setPage] = useState(1);
-    const getProducts = async (page) =>{
-        console.log(page);
+    
+    const getProducts = useCallback(async () =>{
         let response;
-        response = await api.get('/products');
-        setProducts(response.data.products);
+        if(page === 1){
+            response = await api.get('/products');
+            setProducts(response.data.products);
+        }
+        else{
+            response = await api.get('/products',{
+				params:{
+					page: page
+				}
+			})
+			setProducts(prevProducts => prevProducts.concat(response.data.products));
+        }
         
-    }
+    },[page]);
 
     useEffect(() =>{
-        getProducts(page);
-    },[])
+        getProducts();
+    },[getProducts,page])
 
     return products;
 }
